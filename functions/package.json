@@ -19,11 +19,10 @@
   "dependencies": {
     "actions-on-google": "^2.0.0",
     "firebase-admin": "^5.12.1",
-    "firebase-functions": "^1.0.2"
+    "firebase-functions": "^2.0.5"
   },
   "devDependencies": {
     "eslint": "^4.19.0",
     "eslint-config-google": "^0.9.1"
   }
 }
-

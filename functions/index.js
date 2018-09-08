@@ -19,8 +19,8 @@ const host = 'api.meetup.com';
 const httpGET = 'GET';
 const jsonContentType = 'application/json';
 
-// Handle the Dialogflow intent named 'favorite color'.
-// The intent collects a parameter named 'color'.
+// Handle the Dialogflow intent named 'activity'.
+// The intent collects a parameter named 'Activity'.
 app.intent('activity', (conv, {
   Activity
 }) => {
@@ -28,25 +28,22 @@ app.intent('activity', (conv, {
   const luckyNumber = Activity.length;
   // Respond with the user's lucky number and end the conversation.
   //conv.close('Your lucky number is ' + luckyNumber + ' yeehaw!');
-  handleEventSearch("hiking");
+  handleEventSearch(conv, "hiking");
 });
 
-function handleEventSearch(req) {
-
-  callSearchEvents(req).then((output) => {
+function handleEventSearch(conv, req) {
+	  callSearchEvents(req).then((output) => {
 
     return conv.close('Your lucky number is ' + luckyNumber + ' yeehaw!');
 
   }).catch((reason) => {
-    return conv.close({
-      'fulfillmentText': reason
-    });
+    return conv.close('Your lucky number is 7 yeehaw!');
   });
 }
 
 function callSearchEvents(events) {
   return new Promise((resolve, reject) => {
-    let path = '2/events?key=62663d4f7b391b7143156918537f7722&group_urlname=ny-tech&sign=true';
+    let path = '/2/events?key=62663d4f7b391b7143156918537f7722&group_urlname=ny-tech&sign=true';
 
     const options = {
       hostname: host,
@@ -75,7 +72,6 @@ function callSearchEvents(events) {
       console.error(`problem with request: ${e.message}`);
       reject(new Error(`problem with request: ${e.message}`));
     });
-    req.write(bodyAsJSONString);
 
     req.end();
   });
