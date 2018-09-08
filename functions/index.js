@@ -28,17 +28,21 @@ app.intent('activity', (conv, {
   const luckyNumber = Activity.length;
   // Respond with the user's lucky number and end the conversation.
   //conv.close('Your lucky number is ' + luckyNumber + ' yeehaw!');
-  handleEventSearch(conv, "hiking");
+  handleEventSearch(conv, "hiking").then((output) => {
+    return conv.close(output);
+  }).catch((reason) => {
+    conv.close(reason);
+  });
 });
 
-function handleEventSearch(conv, req) {
-	  callSearchEvents(req).then((output) => {
-
-    return conv.close('Your lucky number is ' + luckyNumber + ' yeehaw!');
-
-  }).catch((reason) => {
-    return conv.close('Your lucky number is 7 yeehaw!');
-  });
+function handleEventSearch(conv, events) {
+  return new Promise((resolve, reject) => {
+    callSearchEvents(events).then((ouput) => {
+      return resolve('Your lucky number is ' + output + ' yeehaw!');
+    }).catch((reason) => {
+      reject(new Error(reason));
+    });
+  })
 }
 
 function callSearchEvents(events) {
@@ -58,7 +62,7 @@ function callSearchEvents(events) {
       res.setEncoding('utf8');
       var data = ''
 
-      res.on('data', chunk =>  {
+      res.on('data', chunk => {
         data += chunk
       });
 
