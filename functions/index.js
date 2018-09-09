@@ -1,5 +1,6 @@
 // See https://github.com/dialogflow/dialogflow-fulfillment-nodejs
 // for Dialogflow fulfillment library docs, samples, and to report issues
+//https://developers.google.com/actions/reference/rest/Shared.Types/AppResponse
 'use strict';
 
 const {
@@ -30,7 +31,7 @@ app.intent('activity', (conv, {
   return handleEventSearch(Activity).then((output) => {
     return conv.close(new SimpleResponse({
       speech: output,
-      text: output + " http://www.whereisdarran.com",
+      text: output,
     }))
   }).catch((reason) => {
     return conv.close(new SimpleResponse({
