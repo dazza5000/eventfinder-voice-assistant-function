@@ -4,18 +4,7 @@
 
 const {
   dialogflow,
-  BasicCard,
-  BrowseCarousel,
-  BrowseCarouselItem,
-  Button,
-  Carousel,
-  Image,
-  LinkOutSuggestion,
-  List,
-  MediaObject,
-  Suggestions,
   SimpleResponse,
-  Table,
 } = require('actions-on-google');
 
 // Import the firebase-functions package for deployment.
@@ -52,7 +41,7 @@ app.intent('activity', (conv, {
 function handleEventSearch(conv, events) {
   return new Promise((resolve, reject) => {
     callSearchEvents(events).then((output) => {
-      return resolve('Your lucky number is ' + JSON.stringify(output) + ' yeehaw!');
+      return resolve('There are' + output.meta.count + ' tech events in New York. yeehaw!');
     }).catch((reason) => {
       reject(new Error(reason));
     });

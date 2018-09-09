@@ -1,0 +1,102 @@
+[debug] [2018-09-09T01:21:20.697Z] ----------------------------------------------------------------------
+[debug] [2018-09-09T01:21:20.700Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-09-09T01:21:20.700Z] CLI Version:   4.2.1
+[debug] [2018-09-09T01:21:20.700Z] Platform:      linux
+[debug] [2018-09-09T01:21:20.700Z] Node Version:  v7.10.0
+[debug] [2018-09-09T01:21:20.700Z] Time:          Sat Sep 08 2018 20:21:20 GMT-0500 (CDT)
+[debug] [2018-09-09T01:21:20.701Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-09T01:21:20.713Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-09T01:21:20.713Z] > authorizing via signed-in user
+[debug] [2018-09-09T01:21:20.716Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/event-finder-16d0b  
+ 
+[debug] [2018-09-09T01:21:21.047Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'event-finder-16d0b'...
+[info] 
+[info] i  deploying functions
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] ✔  functions: Finished running predeploy script.
+[debug] [2018-09-09T01:21:25.230Z] > [functions] package.json contents: {
+  "name": "dialogflowFirebaseFulfillment",
+  "description": "This is the default fulfillment for a Dialogflow agents using Cloud Functions for Firebase",
+  "version": "0.0.1",
+  "private": true,
+  "license": "Apache Version 2.0",
+  "author": "Google Inc.",
+  "engines": {
+    "node": "8"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase serve --only functions",
+    "shell": "firebase experimental:functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "actions-on-google": "^2.0.0",
+    "firebase-admin": "^5.12.1",
+    "firebase-functions": "^2.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.0",
+    "eslint-config-google": "^0.9.1"
+  }
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2018-09-09T01:21:25.232Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/event-finder-16d0b?view=CONSUMER_VIEW  
+ 
+[debug] [2018-09-09T01:21:25.234Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/event-finder-16d0b?view=CONSUMER_VIEW  
+ 
+[debug] [2018-09-09T01:21:26.067Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-09T01:21:26.154Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2018-09-09T01:21:26.156Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/event-finder-16d0b  
+ 
+[debug] [2018-09-09T01:21:26.471Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-09T01:21:26.472Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/11479095460:getServerAppConfig  
+ 
+[debug] [2018-09-09T01:21:26.750Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2018-09-09T01:21:26.764Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/event-finder-16d0b/configs  
+ 
+[debug] [2018-09-09T01:21:27.004Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (42.29 KB) for uploading
+[debug] [2018-09-09T01:21:27.581Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/event-finder-16d0b/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2018-09-09T01:21:28.093Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-09T01:21:28.094Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-eedad5d5-fe30-4534-b7d6-4ae6d0089348/aa82e904-8a38-4401-94aa-751fa5435d51.zip?GoogleAccessId=service-11479095460@gcf-admin-robot.iam.gserviceaccount.com&Expires=1536457888&Signature=ANxD4Ei%2FfaIjsAarnPf5U00FVjUdusiYQPb6keeNlJgTC0L8TfN6GR3ewv0K53%2Bo7CqvdP2yHy79E4AKibuZvF1MhPJmXMkvujfagQGc6ujh2PbnolRHYaZUL2dJwozqzzuUnkRhKdz%2FVgxjIMYLkqA6Cy781EHpAScsgrP0ZqojgPFTPxArfcNeleLCc2%2ByXvDthIJAa3tZ60heKMIn5A9GuKRDgWGzBG2pJ%2BUceL6%2ButDKmoDX9ToOGO1mG%2Bq1IE%2FiUfjAti42DHSNgmz%2FFaxkAUF1Xuq7W5VCKEt6ZtazSyzx2Xs76C3W5ItjimpQaSNsHHZ6pF4ZLhsWptFBIQ%3D%3D  
+
+[debug] [2018-09-09T01:21:28.609Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[debug] [2018-09-09T01:21:28.613Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/event-finder-16d0b/locations/-/functions  
+ 
+[debug] [2018-09-09T01:21:29.150Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating Node.js 8 function dialogflowFirebaseFulfillment(us-central1)...
+[debug] [2018-09-09T01:21:29.160Z] Trigger is:  {"httpsTrigger":{}}
+[debug] [2018-09-09T01:21:29.162Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/event-finder-16d0b/locations/us-central1/functions/dialogflowFirebaseFulfillment 
+query params: {"updateMask":"sourceUploadUrl,name,labels,runtime,httpsTrigger"} 
+
+[debug] [2018-09-09T01:21:29.729Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-09T01:21:29.736Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/event-finder-16d0b/locations/-/functions  
+ 
+[debug] [2018-09-09T01:21:30.251Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-09T01:21:30.255Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/ZXZlbnQtZmluZGVyLTE2ZDBiL3VzLWNlbnRyYWwxL2RpYWxvZ2Zsb3dGaXJlYmFzZUZ1bGZpbGxtZW50L05lOEtPWHVyUUdZ  
+ 
+[debug] [2018-09-09T01:21:30.649Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-09T01:21:32.657Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/ZXZlbnQtZmluZGVyLTE2ZDBiL3VzLWNlbnRyYWwxL2RpYWxvZ2Zsb3dGaXJlYmFzZUZ1bGZpbGxtZW50L05lOEtPWHVyUUdZ  
+ 
+[debug] [2018-09-09T01:21:33.009Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-09T01:21:35.011Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/ZXZlbnQtZmluZGVyLTE2ZDBiL3VzLWNlbnRyYWwxL2RpYWxvZ2Zsb3dGaXJlYmFzZUZ1bGZpbGxtZW50L05lOEtPWHVyUUdZ  
+ 
+[debug] [2018-09-09T01:21:35.368Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-09T01:21:37.371Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/ZXZlbnQtZmluZGVyLTE2ZDBiL3VzLWNlbnRyYWwxL2RpYWxvZ2Zsb3dGaXJlYmFzZUZ1bGZpbGxtZW50L05lOEtPWHVyUUdZ  
+ 
+[debug] [2018-09-09T01:21:37.708Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-09T01:21:39.711Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/ZXZlbnQtZmluZGVyLTE2ZDBiL3VzLWNlbnRyYWwxL2RpYWxvZ2Zsb3dGaXJlYmFzZUZ1bGZpbGxtZW50L05lOEtPWHVyUUdZ  
+ 
+[debug] [2018-09-09T01:21:40.067Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-09T01:21:42.069Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/ZXZlbnQtZmluZGVyLTE2ZDBiL3VzLWNlbnRyYWwxL2RpYWxvZ2Zsb3dGaXJlYmFzZUZ1bGZpbGxtZW50L05lOEtPWHVyUUdZ  
+ 
