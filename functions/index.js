@@ -5,6 +5,7 @@
 const {
   dialogflow,
   SimpleResponse,
+  BasicCard,
 } = require('actions-on-google');
 
 // Import the firebase-functions package for deployment.
@@ -26,11 +27,12 @@ app.intent('activity', (conv, {
 }) => {
 
   const luckyNumber = Activity.length;
-  return handleEventSearch(conv, "hiking").then((output) => {
-    console.log("yay");
-    return conv.close(output);
+  return handleEventSearch(Activity).then((output) => {
+    return conv.close(new SimpleResponse({
+      speech: output,
+      text: output + " http://www.whereisdarran.com",
+    }))
   }).catch((reason) => {
-    console.log("woops");
     return conv.close(new SimpleResponse({
       speech: reason.message,
       text: reason.message,
@@ -38,19 +40,20 @@ app.intent('activity', (conv, {
   });
 });
 
-function handleEventSearch(conv, events) {
+function handleEventSearch(events) {
   return new Promise((resolve, reject) => {
     callSearchEvents(events).then((output) => {
-      return resolve('There are' + output.meta.count + ' tech events in New York. yeehaw!');
+      return resolve('There are ' + output.events.length + ' ' + events + ' events in Austin.');
     }).catch((reason) => {
       reject(new Error(reason));
     });
   })
 }
 
-function callSearchEvents(events) {
+function callSearchEvents(searchTerm) {
   return new Promise((resolve, reject) => {
-    let path = '/2/events?key=62663d4f7b391b7143156918537f7722&group_urlname=ny-tech&sign=true';
+    let path = '/find/upcoming_events?key=62663d4f7b391b7143156918537f7722' +
+      '&photo-host=public&page=100&text=' + searchTerm + '&sig_id=205377881&lon=-97.7431&lat=30.2672';
 
     const options = {
       hostname: host,
