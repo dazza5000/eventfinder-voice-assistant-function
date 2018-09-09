@@ -2,9 +2,20 @@
 // for Dialogflow fulfillment library docs, samples, and to report issues
 'use strict';
 
-// Import the Dialogflow module from the Actions on Google client library.
 const {
-  dialogflow
+  dialogflow,
+  BasicCard,
+  BrowseCarousel,
+  BrowseCarouselItem,
+  Button,
+  Carousel,
+  Image,
+  LinkOutSuggestion,
+  List,
+  MediaObject,
+  Suggestions,
+  SimpleResponse,
+  Table,
 } = require('actions-on-google');
 
 // Import the firebase-functions package for deployment.
@@ -26,19 +37,22 @@ app.intent('activity', (conv, {
 }) => {
 
   const luckyNumber = Activity.length;
-  // Respond with the user's lucky number and end the conversation.
-  //conv.close('Your lucky number is ' + luckyNumber + ' yeehaw!');
-  handleEventSearch(conv, "hiking").then((output) => {
+  return handleEventSearch(conv, "hiking").then((output) => {
+    console.log("yay");
     return conv.close(output);
   }).catch((reason) => {
-    conv.close(reason);
+    console.log("woops");
+    return conv.close(new SimpleResponse({
+      speech: reason.message,
+      text: reason.message,
+    }));
   });
 });
 
 function handleEventSearch(conv, events) {
   return new Promise((resolve, reject) => {
-    callSearchEvents(events).then((ouput) => {
-      return resolve('Your lucky number is ' + output + ' yeehaw!');
+    callSearchEvents(events).then((output) => {
+      return resolve('Your lucky number is ' + Json.stringify(output) + ' yeehaw!');
     }).catch((reason) => {
       reject(new Error(reason));
     });

@@ -1,23 +1,23 @@
-[debug] [2018-09-08T23:39:32.382Z] ----------------------------------------------------------------------
-[debug] [2018-09-08T23:39:32.385Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
-[debug] [2018-09-08T23:39:32.386Z] CLI Version:   4.2.1
-[debug] [2018-09-08T23:39:32.386Z] Platform:      linux
-[debug] [2018-09-08T23:39:32.386Z] Node Version:  v7.10.0
-[debug] [2018-09-08T23:39:32.386Z] Time:          Sat Sep 08 2018 18:39:32 GMT-0500 (CDT)
-[debug] [2018-09-08T23:39:32.386Z] ----------------------------------------------------------------------
+[debug] [2018-09-09T00:17:27.452Z] ----------------------------------------------------------------------
+[debug] [2018-09-09T00:17:27.455Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-09-09T00:17:27.456Z] CLI Version:   4.2.1
+[debug] [2018-09-09T00:17:27.456Z] Platform:      linux
+[debug] [2018-09-09T00:17:27.456Z] Node Version:  v7.10.0
+[debug] [2018-09-09T00:17:27.456Z] Time:          Sat Sep 08 2018 19:17:27 GMT-0500 (CDT)
+[debug] [2018-09-09T00:17:27.456Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-09-08T23:39:32.399Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-09-08T23:39:32.399Z] > authorizing via signed-in user
-[debug] [2018-09-08T23:39:32.402Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/event-finder-16d0b  
+[debug] [2018-09-09T00:17:27.468Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-09T00:17:27.468Z] > authorizing via signed-in user
+[debug] [2018-09-09T00:17:27.471Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/event-finder-16d0b  
  
-[debug] [2018-09-08T23:39:32.794Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-09T00:17:27.799Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Deploying to 'event-finder-16d0b'...
 [info] 
 [info] i  deploying functions
 [info] Running command: npm --prefix "$RESOURCE_DIR" run lint
 [info] ✔  functions: Finished running predeploy script.
-[debug] [2018-09-08T23:39:37.115Z] > [functions] package.json contents: {
+[debug] [2018-09-09T00:17:31.904Z] > [functions] package.json contents: {
   "name": "dialogflowFirebaseFulfillment",
   "description": "This is the default fulfillment for a Dialogflow agents using Cloud Functions for Firebase",
   "version": "0.0.1",
@@ -46,73 +46,19 @@
   }
 }
 [info] i  functions: ensuring necessary APIs are enabled...
-[debug] [2018-09-08T23:39:37.116Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/event-finder-16d0b?view=CONSUMER_VIEW  
+[debug] [2018-09-09T00:17:31.907Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/event-finder-16d0b?view=CONSUMER_VIEW  
  
-[debug] [2018-09-08T23:39:37.118Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/event-finder-16d0b?view=CONSUMER_VIEW  
+[debug] [2018-09-09T00:17:31.908Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/event-finder-16d0b?view=CONSUMER_VIEW  
  
-[debug] [2018-09-08T23:39:37.886Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-08T23:39:37.937Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-09T00:17:32.648Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-09T00:17:32.782Z] <<< HTTP RESPONSE 200
 [info] ✔  functions: all necessary APIs are enabled
-[debug] [2018-09-08T23:39:37.939Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/event-finder-16d0b  
+[debug] [2018-09-09T00:17:32.784Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/event-finder-16d0b  
  
-[debug] [2018-09-08T23:39:38.222Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-08T23:39:38.224Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/11479095460:getServerAppConfig  
+[debug] [2018-09-09T00:17:33.056Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-09T00:17:33.058Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/11479095460:getServerAppConfig  
  
-[debug] [2018-09-08T23:39:38.436Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-09T00:17:33.265Z] <<< HTTP RESPONSE 200
 [info] i  functions: preparing functions directory for uploading...
-[debug] [2018-09-08T23:39:38.449Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/event-finder-16d0b/configs  
+[debug] [2018-09-09T00:17:33.278Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/event-finder-16d0b/configs  
  
-[debug] [2018-09-08T23:39:38.658Z] <<< HTTP RESPONSE 200
-[info] i  functions: packaged functions (42.3 KB) for uploading
-[debug] [2018-09-08T23:39:39.256Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/event-finder-16d0b/locations/us-central1/functions:generateUploadUrl  
- 
-[debug] [2018-09-08T23:39:39.745Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-08T23:39:39.748Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-eedad5d5-fe30-4534-b7d6-4ae6d0089348/26fa0708-03a4-49e3-b644-21319c55d434.zip?GoogleAccessId=service-11479095460@gcf-admin-robot.iam.gserviceaccount.com&Expires=1536451779&Signature=UOAed6nOPBbvfV9nGZijwg2vaK7CHnadFk8FKSel3zP9ROuJKZ3nDpzAsc8%2BzKlZOx0%2FljVyHwh7oo3cbBJE0PtXj6uD84Q0M4Awu5hUK22YcmTrL17cnYoWr0Hnz6v6c%2BNks%2BZIvZM5FcCKNEUdNqjzcfmWL9BB26mwAK%2B5UBEvdcMWj%2BmN3KhkLTBrMVLoEmLFT7SydTjEgAmH65%2BMbeSmWqgopfUAyXNmKgKuS9b1uc8Yxj8eBxZgOmTrxM63qTHdOH2G0x5Rgs%2Ff3SR0kK9i6d2sxN0dCrAUM2m1iLnvB1xmX%2BIzWfQv28YM0o2qsyMk7mXH4EzqaorN6D7NxA%3D%3D  
-
-[debug] [2018-09-08T23:39:40.299Z] <<< HTTP RESPONSE 200
-[info] ✔  functions: functions folder uploaded successfully
-[debug] [2018-09-08T23:39:40.304Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/event-finder-16d0b/locations/-/functions  
- 
-[debug] [2018-09-08T23:39:40.864Z] <<< HTTP RESPONSE 200
-[info] i  functions: updating Node.js 8 function dialogflowFirebaseFulfillment(us-central1)...
-[debug] [2018-09-08T23:39:40.873Z] Trigger is:  {"httpsTrigger":{}}
-[debug] [2018-09-08T23:39:40.875Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/event-finder-16d0b/locations/us-central1/functions/dialogflowFirebaseFulfillment 
-query params: {"updateMask":"sourceUploadUrl,name,labels,runtime,httpsTrigger"} 
-
-[debug] [2018-09-08T23:39:41.297Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-08T23:39:41.303Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/event-finder-16d0b/locations/-/functions  
- 
-[debug] [2018-09-08T23:39:41.862Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-08T23:39:41.865Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/ZXZlbnQtZmluZGVyLTE2ZDBiL3VzLWNlbnRyYWwxL2RpYWxvZ2Zsb3dGaXJlYmFzZUZ1bGZpbGxtZW50L21BLVp5aXBsM2VZ  
- 
-[debug] [2018-09-08T23:39:42.062Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-08T23:39:44.067Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/ZXZlbnQtZmluZGVyLTE2ZDBiL3VzLWNlbnRyYWwxL2RpYWxvZ2Zsb3dGaXJlYmFzZUZ1bGZpbGxtZW50L21BLVp5aXBsM2VZ  
- 
-[debug] [2018-09-08T23:39:44.415Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-08T23:39:46.420Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/ZXZlbnQtZmluZGVyLTE2ZDBiL3VzLWNlbnRyYWwxL2RpYWxvZ2Zsb3dGaXJlYmFzZUZ1bGZpbGxtZW50L21BLVp5aXBsM2VZ  
- 
-[debug] [2018-09-08T23:39:46.783Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-08T23:39:48.786Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/ZXZlbnQtZmluZGVyLTE2ZDBiL3VzLWNlbnRyYWwxL2RpYWxvZ2Zsb3dGaXJlYmFzZUZ1bGZpbGxtZW50L21BLVp5aXBsM2VZ  
- 
-[debug] [2018-09-08T23:39:49.140Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-08T23:39:51.143Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/ZXZlbnQtZmluZGVyLTE2ZDBiL3VzLWNlbnRyYWwxL2RpYWxvZ2Zsb3dGaXJlYmFzZUZ1bGZpbGxtZW50L21BLVp5aXBsM2VZ  
- 
-[debug] [2018-09-08T23:39:51.508Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-08T23:39:53.509Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/ZXZlbnQtZmluZGVyLTE2ZDBiL3VzLWNlbnRyYWwxL2RpYWxvZ2Zsb3dGaXJlYmFzZUZ1bGZpbGxtZW50L21BLVp5aXBsM2VZ  
- 
-[debug] [2018-09-08T23:39:53.885Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-08T23:39:55.887Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/ZXZlbnQtZmluZGVyLTE2ZDBiL3VzLWNlbnRyYWwxL2RpYWxvZ2Zsb3dGaXJlYmFzZUZ1bGZpbGxtZW50L21BLVp5aXBsM2VZ  
- 
-[debug] [2018-09-08T23:39:56.239Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-08T23:39:58.243Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/ZXZlbnQtZmluZGVyLTE2ZDBiL3VzLWNlbnRyYWwxL2RpYWxvZ2Zsb3dGaXJlYmFzZUZ1bGZpbGxtZW50L21BLVp5aXBsM2VZ  
- 
-[debug] [2018-09-08T23:39:58.602Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-08T23:40:00.605Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/ZXZlbnQtZmluZGVyLTE2ZDBiL3VzLWNlbnRyYWwxL2RpYWxvZ2Zsb3dGaXJlYmFzZUZ1bGZpbGxtZW50L21BLVp5aXBsM2VZ  
- 
-[debug] [2018-09-08T23:40:00.980Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-08T23:40:02.987Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/ZXZlbnQtZmluZGVyLTE2ZDBiL3VzLWNlbnRyYWwxL2RpYWxvZ2Zsb3dGaXJlYmFzZUZ1bGZpbGxtZW50L21BLVp5aXBsM2VZ  
- 
-[debug] [2018-09-08T23:40:03.349Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-08T23:40:05.355Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/ZXZlbnQtZmluZGVyLTE2ZDBiL3VzLWNlbnRyYWwxL2RpYWxvZ2Zsb3dGaXJlYmFzZUZ1bGZpbGxtZW50L21BLVp5aXBsM2VZ  
- 
-[debug] [2018-09-08T23:40:05.728Z] <<< HTTP RESPONSE 200
